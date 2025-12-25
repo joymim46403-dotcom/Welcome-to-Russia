@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Russia – International Student Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🇷🇺</span>
+                <span class="logo-text">WelcomeToRussia</span>
+            </a>
+            <nav class="nav">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#guide" class="nav-link">First Week Guide</a>
+                <a href="#buddy" class="nav-link">Buddy System</a>
+                <a href="#map" class="nav-link">City Map</a>
+                <a href="#events" class="nav-link">Events</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="ar">AR</button>
+                <button class="lang-btn" data-lang="fr">FR</button>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-i18n="hero_title">
+                    Your Smooth Start in Russia Begins Here
+                </h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle">
+                    A free multilingual guide and buddy network for international students at Lobachevsky University and beyond. Navigate registration, banking, transport, and social life with confidence.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#guide" class="btn btn-primary" data-i18n="hero_btn1">
+                        Start First‑Week Guide
+                    </a>
+                    <a href="#buddy" class="btn btn-secondary" data-i18n="hero_btn2">
+                        Request a Buddy
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1541336032412-2048a678540d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Students in Russia">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title" data-i18n="features_title">
+                How We Help You Settle In
+            </h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3 data-i18n="feature1_title">Step‑by‑Step Visa & Registration</h3>
+                    <p data-i18n="feature1_text">
+                        Visual guides with translated forms, office locations, and timelines to complete legal requirements.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3 data-i18n="feature2_title">Personal Buddy Support</h3>
+                    <p data-i18n="feature2_text">
+                        Get matched with a trained student volunteer who will meet you and help with your first tasks.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 data-i18n="feature3_title">Interactive City Map</h3>
+                    <p data-i18n="feature3_text">
+                        Find foreigner‑friendly banks, pharmacies, supermarkets, and essential services in Nizhny Novgorod.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 data-i18n="feature4_title">Multilingual Glossary & Tips</h3>
+                    <p data-i18n="feature4_text">
+                        Audio phrases, cultural notes, and survival Russian to help you communicate from day one.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buddy System Section -->
+    <section class="buddy-section" id="buddy">
+        <div class="container">
+            <div class="buddy-content">
+                <h2 class="section-title" data-i18n="buddy_title">
+                    Get a Buddy – You're Not Alone
+                </h2>
+                <p data-i18n="buddy_text">
+                    Our network of volunteer students (both Russian and international) is ready to meet you at the airport, help with university registration, show you around the city, and answer all your questions.
+                </p>
+                <div class="buddy-actions">
+                    <a href="#buddy-form" class="btn btn-primary" data-i18n="buddy_btn1">
+                        I Need a Buddy
+                    </a>
+                    <a href="#" class="btn btn-outline" data-i18n="buddy_btn2">
+                        Become a Buddy
+                    </a>
+                </div>
+            </div>
+            <div class="buddy-form" id="buddy-form">
+                <h3 data-i18n="form_title">Request a Buddy</h3>
+                <form id="requestForm">
+                    <input type="text" placeholder="Your Full Name" data-i18n-placeholder="form_name" required>
+                    <input type="email" placeholder="Email Address" data-i18n-placeholder="form_email" required>
+                    <input type="text" placeholder="Country of Origin" data-i18n-placeholder="form_country" required>
+                    <input type="text" placeholder="Arrival Date" data-i18n-placeholder="form_date" onfocus="(this.type='date')" required>
+                    <select required>
+                        <option value="" disabled selected data-i18n="form_lang_select">Preferred Buddy Language</option>
+                        <option value="en">English</option>
+                        <option value="ru">Russian</option>
+                        <option value="ar">Arabic</option>
+                        <option value="fr">French</option>
+                    </select>
+                    <textarea placeholder="Any specific needs or questions?" data-i18n-placeholder="form_message" rows="3"></textarea>
+                    <button type="submit" class="btn btn-primary" data-i18n="form_submit">
+                        Send Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="quick-links" id="guide">
+        <div class="container">
+            <h2 class="section-title" data-i18n="links_title">
+                First‑Week Survival Guide
+            </h2>
+            <div class="links-grid">
+                <a href="#" class="link-card" data-i18n="link1">Visa Registration</a>
+                <a href="#" class="link-card" data-i18n="link2">University Enrollment</a>
+                <a href="#" class="link-card" data-i18n="link3">Bank Account</a>
+                <a href="#" class="link-card" data-i18n="link4">Medical Insurance</a>
+                <a href="#" class="link-card" data-i18n="link5">SIM Card & Internet</a>
+                <a href="#" class="link-card" data-i18n="link6">Public Transport</a>
+                <a href="#" class="link-card" data-i18n="link7">Supermarkets & Food</a>
+                <a href="#" class="link-card" data-i18n="link8">Survival Russian Phrases</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="logo-icon">🇷🇺</span>
+                    <span class="logo-text">WelcomeToRussia</span>
+                </a>
+                <p data-i18n="footer_tagline">
+                    A non‑profit student initiative supported by Lobachevsky University.
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="footer_contact">Contact & Support</h4>
+                <p><i class="fas fa-envelope"></i> help@welcometorussia.org</p>
+                <p><i class="fas fa-phone"></i> +7 (XXX) XXX‑XX‑XX</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nizhny Novgorod, Russia</p>
+            </div>
+            <div class="footer-social">
+                <h4 data-i18n="footer_follow">Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p class="footer-copyright">
+                    © 2024 Welcome to Russia Project. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
