@@ -1,232 +1,201 @@
-// Language data
-const translations = {
-    en: {
-        hero_title: "Your Smooth Start in Russia Begins Here",
-        hero_subtitle: "A free multilingual guide and buddy network for international students at Lobachevsky University and beyond. Navigate registration, banking, transport, and social life with confidence.",
-        hero_btn1: "Start First‑Week Guide",
-        hero_btn2: "Request a Buddy",
-        features_title: "How We Help You Settle In",
-        feature1_title: "Step‑by‑Step Visa & Registration",
-        feature1_text: "Visual guides with translated forms, office locations, and timelines to complete legal requirements.",
-        feature2_title: "Personal Buddy Support",
-        feature2_text: "Get matched with a trained student volunteer who will meet you and help with your first tasks.",
-        feature3_title: "Interactive City Map",
-        feature3_text: "Find foreigner‑friendly banks, pharmacies, supermarkets, and essential services in Nizhny Novgorod.",
-        feature4_title: "Multilingual Glossary & Tips",
-        feature4_text: "Audio phrases, cultural notes, and survival Russian to help you communicate from day one.",
-        buddy_title: "Get a Buddy – You're Not Alone",
-        buddy_text: "Our network of volunteer students (both Russian and international) is ready to meet you at the airport, help with university registration, show you around the city, and answer all your questions.",
-        buddy_btn1: "I Need a Buddy",
-        buddy_btn2: "Become a Buddy",
-        form_title: "Request a Buddy",
-        form_name: "Your Full Name",
-        form_email: "Email Address",
-        form_country: "Country of Origin",
-        form_date: "Arrival Date",
-        form_lang_select: "Preferred Buddy Language",
-        form_message: "Any specific needs or questions?",
-        form_submit: "Send Request",
-        links_title: "First‑Week Survival Guide",
-        link1: "Visa Registration",
-        link2: "University Enrollment",
-        link3: "Bank Account",
-        link4: "Medical Insurance",
-        link5: "SIM Card & Internet",
-        link6: "Public Transport",
-        link7: "Supermarkets & Food",
-        link8: "Survival Russian Phrases",
-        footer_tagline: "A non‑profit student initiative supported by Lobachevsky University.",
-        footer_contact: "Contact & Support",
-        footer_follow: "Follow Us"
-    },
-    ru: {
-        hero_title: "Ваш гладкий старт в России начинается здесь",
-        hero_subtitle: "Бесплатный многоязычный гид и сеть помощников для иностранных студентов Университета Лобачевского и других вузов. Регистрация, банк, транспорт и социальная жизнь — с уверенностью.",
-        hero_btn1: "Начать гид по первой неделе",
-        hero_btn2: "Запросить помощника",
-        features_title: "Как мы помогаем вам освоиться",
-        feature1_title: "Пошаговая виза и регистрация",
-        feature1_text: "Визуальные инструкции с переведёнными бланками, адресами и сроками.",
-        feature2_title: "Персональный помощник",
-        feature2_text: "Волонтёр встретит вас и поможет с первыми задачами.",
-        feature3_title: "Интерактивная карта города",
-        feature3_text: "Найдите удобные банки, аптеки, супермаркеты в Нижнем Новгороде.",
-        feature4_title: "Многоязычный глоссарий",
-        feature4_text: "Аудиофразы и советы по русскому языку с первого дня.",
-        buddy_title: "Найдите помощника — вы не одни",
-        buddy_text: "Наши волонтёры (русские и иностранцы) готовы встретить вас, помочь с регистрацией в вузе и показать город.",
-        buddy_btn1: "Мне нужен помощник",
-        buddy_btn2: "Стать помощником",
-        form_title: "Запрос на помощника",
-        form_name: "Ваше полное имя",
-        form_email: "Адрес электронной почты",
-        form_country: "Страна происхождения",
-        form_date: "Дата прибытия",
-        form_lang_select: "Предпочитаемый язык помощника",
-        form_message: "Особые потребности или вопросы?",
-        form_submit: "Отправить запрос",
-        links_title: "Гид по первой неделе",
-        link1: "Регистрация визы",
-        link2: "Зачисление в вуз",
-        link3: "Банковский счёт",
-        link4: "Медицинская страховка",
-        link5: "SIM-карта и интернет",
-        link6: "Общественный транспорт",
-        link7: "Супермаркеты и еда",
-        link8: "Базовые русские фразы",
-        footer_tagline: "Студенческая инициатива при поддержке Университета Лобачевского.",
-        footer_contact: "Контакты и поддержка",
-        footer_follow: "Мы в соцсетях"
-    },
-    ar: {
-        hero_title: "بدايتك السلسة في روسيا تبدأ من هنا",
-        hero_subtitle: "دليل مجاني متعدد اللغات وشبكة أصدقاء لطلاب جامعة لوباتشيفسكي الدوليين. تعامل مع التسجيل والبنوك والنقل والحياة الاجتماعية بثقة.",
-        hero_btn1: "ابدأ دليل الأسبوع الأول",
-        hero_btn2: "طلب صديق مساعد",
-        features_title: "كيف نساعدك على الاستقرار",
-        feature1_title: "خطوة بخطوة: التأشيرة والتسجيل",
-        feature1_text: "أدلة مرئية مع نماذج مترجمة ومواقع المكاتب والمواعيد النهائية.",
-        feature2_title: "دعم صديق شخصي",
-        feature2_text: "تم إقرانك مع متطوع طالب مدرب لمساعدتك في مهامك الأولى.",
-        feature3_title: "خريطة المدينة التفاعلية",
-        feature3_text: "ابحث عن البنوك والصيدليات والمتاجر المناسبة للأجانب في نيجني نوفغورود.",
-        feature4_title: "قاموس متعدد اللغات ونصائح",
-        feature4_text: "عبارات صوتية وملاحظات ثقافية ولغة روسية أساسية للمساعدة في التواصل.",
-        buddy_title: "احصل على صديق مساعد - لست وحدك",
-        buddy_text: "شبكتنا من الطلاب المتطوعين (روس وأجانب) جاهزة لمقابلتك في المطار، المساعدة في التسجيل بالجامعة، وجولة في المدينة.",
-        buddy_btn1: "أحتاج صديقًا مساعدًا",
-        buddy_btn2: "كن صديقًا مساعدًا",
-        form_title: "طلب صديق مساعد",
-        form_name: "الاسم الكامل",
-        form_email: "البريد الإلكتروني",
-        form_country: "بلد المنشأ",
-        form_date: "تاريخ الوصول",
-        form_lang_select: "الغة المفضلة للمساعد",
-        form_message: "أي احتياجات أو أسئلة محددة؟",
-        form_submit: "إرسال الطلب",
-        links_title: "دليل النجاة في الأسبوع الأول",
-        link1: "تسجيل التأشيرة",
-        link2: "القيد الجامعي",
-        link3: "فتح حساب بنكي",
-        link4: "التأمين الصحي",
-        link5: "شريحة SIM والإنترنت",
-        link6: "النقل العام",
-        link7: "المتاجر والطعام",
-        link8: "عبارات روسية أساسية",
-        footer_tagline: "مبادرة طلابية غير ربحية بدعم من جامعة لوباتشيفسكي.",
-        footer_contact: "الاتصال والدعم",
-        footer_follow: "تابعنا"
-    },
-    fr: {
-        hero_title: "Votre départ en douceur en Russie commence ici",
-        hero_subtitle: "Un guide multilingue gratuit et un réseau de pairs pour les étudiants internationaux de l'Université Lobatchevski. Générez inscriptions, banque, transport et vie sociale en toute confiance.",
-        hero_btn1: "Commencer le guide de la première semaine",
-        hero_btn2: "Demander un compagnon",
-        features_title: "Comment nous vous aidons à vous installer",
-        feature1_title: "Visas et inscriptions étape par étape",
-        feature1_text: "Guides visuels avec formulaires traduits, adresses des bureaux et délais.",
-        feature2_title: "Soutien personnalisé d'un compagnon",
-        feature2_text: "Un étudiant bénévole formé vous accueille et vous aide dans vos premières démarches.",
-        feature3_title: "Carte interactive de la ville",
-        feature3_text: "Trouvez banques, pharmacies, supermarchés adaptés aux étrangers à Nijni Novgorod.",
-        feature4_title: "Glossaire multilingue et conseils",
-        feature4_text: "Phrases audio, notes culturelles et russe de survie pour communiquer dès le premier jour.",
-        buddy_title: "Obtenez un compagnon – vous n'êtes pas seul",
-        buddy_text: "Notre réseau d'étudiants bénévoles (russes et internationaux) est prêt à vous accueillir à l'aéroport, vous aider avec l'inscription universitaire et vous faire visiter la ville.",
-        buddy_btn1: "J'ai besoin d'un compagnon",
-        buddy_btn2: "Devenir compagnon",
-        form_title: "Demander un compagnon",
-        form_name: "Votre nom complet",
-        form_email: "Adresse e-mail",
-        form_country: "Pays d'origine",
-        form_date: "Date d'arrivée",
-        form_lang_select: "Langue du compagnon souhaitée",
-        form_message: "Besoins spécifiques ou questions ?",
-        form_submit: "Envoyer la demande",
-        links_title: "Guide de survie de la première semaine",
-        link1: "Enregistrement du visa",
-        link2: "Inscription à l'université",
-        link3: "Compte bancaire",
-        link4: "Assurance médicale",
-        link5: "Carte SIM et Internet",
-        link6: "Transports en commun",
-        link7: "Supermarchés et nourriture",
-        link8: "Phrases de russe de survie",
-        footer_tagline: "Une initiative étudiante à but non lucratif soutenue par l'Université Lobatchevski.",
-        footer_contact: "Contact et support",
-        footer_follow: "Suivez-nous"
+// Welcome to Russia - Complete Interactive Script
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🎉 Welcome to Russia website loaded successfully!');
+    
+    // ===== LANGUAGE SWITCHER =====
+    const langButtons = document.querySelectorAll('.lang-btn');
+    langButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const lang = this.textContent;
+            alert(`Language switched to ${lang}. Full multilingual support coming soon!`);
+        });
+    });
+    
+    // ===== NAVIGATION SMOOTH SCROLL =====
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Scroll to section
+            const targetId = this.getAttribute('href');
+            if (targetId !== '#') {
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+    
+    // ===== CHECKLIST ITEMS =====
+    document.querySelectorAll('.check-item').forEach((item, index) => {
+        item.addEventListener('click', function() {
+            const title = this.querySelector('h3').textContent;
+            alert(`Opening detailed guide: ${title}`);
+            
+            // Mark as completed on click
+            if (!this.classList.contains('completed')) {
+                this.classList.add('completed');
+                const icon = this.querySelector('.check-icon');
+                icon.textContent = '✓';
+                icon.style.background = '#10b981';
+            }
+        });
+    });
+    
+    // ===== DETAIL BUTTONS =====
+    document.querySelectorAll('.detail-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent triggering parent click
+            const stepTitle = this.closest('.check-content').querySelector('h3').textContent;
+            alert(`Detailed information for: ${stepTitle}\n\nThis would open a full step-by-step guide with photos, addresses, and contact information.`);
+        });
+    });
+    
+    // ===== BUDDY REQUEST FORM =====
+    const buddyForm = document.getElementById('buddyRequestForm');
+    if (buddyForm) {
+        buddyForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const country = this.querySelectorAll('input[type="text"]')[1].value;
+            
+            // Show success message
+            alert(`✅ Thank you ${name}!\n\nYour buddy request has been submitted successfully.\n\nWe will match you with a suitable student buddy and contact you at ${email} within 24 hours.\n\nWelcome to Russia! 🇷🇺`);
+            
+            // Reset form
+            this.reset();
+            
+            // Show confirmation animation
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Request Sent!';
+            submitBtn.style.background = '#10b981';
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = '';
+            }, 3000);
+        });
     }
-};
-
-// Set language
-let currentLang = 'en';
-
-function setLanguage(lang) {
-    currentLang = lang;
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-            el.textContent = translations[lang][key];
-        }
+    
+    // ===== LOCATION BUTTONS =====
+    document.querySelectorAll('.location-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const locationType = this.closest('.location-card').querySelector('h3').textContent;
+            alert(`📍 Opening directions for ${locationType} in Google Maps.\n\nIn the full version, this would integrate with actual maps and navigation.`);
+        });
     });
-    // Placeholders
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (translations[lang] && translations[lang][key]) {
-            el.placeholder = translations[lang][key];
-        }
+    
+    // ===== CTA BUTTONS =====
+    document.querySelectorAll('.primary-btn, .secondary-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            if (this.getAttribute('href') === '#guide') {
+                e.preventDefault();
+                const guideSection = document.querySelector('#guide');
+                window.scrollTo({
+                    top: guideSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
-    // Update language buttons
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        if (btn.dataset.lang === lang) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
+    
+    // ===== SOCIAL LINKS =====
+    document.querySelectorAll('.social-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const platform = this.querySelector('i').className.split(' ')[1].replace('fa-', '');
+            alert(`Following us on ${platform}...\n\nIn the real website, this would open our social media page.`);
+        });
     });
-    localStorage.setItem('preferredLang', lang);
-}
-
-// Language switcher buttons
-document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const lang = btn.dataset.lang;
-        setLanguage(lang);
-    });
-});
-
-// Form submission
-document.getElementById('requestForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert(currentLang === 'en' ? 'Request sent! We will contact you soon.' :
-          currentLang === 'ru' ? 'Запрос отправлен! Мы скоро свяжемся.' :
-          currentLang === 'ar' ? 'تم إرسال الطلب! سنتواصل قريبًا.' :
-          'Demande envoyée ! Nous vous contacterons bientôt.');
-    this.reset();
-});
-
-// Mobile menu toggle
-document.getElementById('menuToggle').addEventListener('click', function() {
-    const nav = document.querySelector('.nav');
-    const lang = document.querySelector('.language-switcher');
-    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-    lang.style.display = lang.style.display === 'flex' ? 'none' : 'flex';
-    if (window.innerWidth <= 768) {
-        if (nav.style.display === 'flex') {
-            nav.style.flexDirection = 'column';
-            nav.style.position = 'absolute';
-            nav.style.top = '70px';
-            nav.style.left = '0';
-            nav.style.width = '100%';
-            nav.style.background = 'white';
-            nav.style.padding = '20px';
-            nav.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-        }
+    
+    // ===== AUTO ANIMATIONS =====
+    // Animate stats on scroll
+    function animateStats() {
+        const stats = document.querySelectorAll('.stat h3');
+        stats.forEach(stat => {
+            const finalNumber = parseInt(stat.textContent);
+            let current = 0;
+            const increment = finalNumber / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= finalNumber) {
+                    current = finalNumber;
+                    clearInterval(timer);
+                }
+                stat.textContent = Math.floor(current) + (stat.textContent.includes('+') ? '+' : '');
+            }, 30);
+        });
     }
+    
+    // Trigger stats animation when visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateStats();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) observer.observe(heroSection);
+    
+    // ===== WELCOME MESSAGE =====
+    setTimeout(() => {
+        console.log('🌍 Project "Welcome to Russia" ready to help international students!');
+        console.log('📧 Contact: help@welcometorussia.org');
+        console.log('🏫 Supported by Lobachevsky University');
+    }, 1000);
+    
+    // ===== PAGE LOAD INDICATOR =====
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
 });
 
-// Restore language preference on load
-window.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('preferredLang') || 'en';
-    setLanguage(savedLang);
+// ===== EXTRA FEATURES =====
+// Current date in footer
+window.addEventListener('load', function() {
+    const date = new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    
+    const dateElement = document.createElement('p');
+    dateElement.textContent = `Last updated: ${date}`;
+    dateElement.style.textAlign = 'center';
+    dateElement.style.color = '#9ca3af';
+    dateElement.style.marginTop = '10px';
+    
+    const footerBottom = document.querySelector('.footer-bottom');
+    if (footerBottom) {
+        footerBottom.appendChild(dateElement);
+    }
+    
+    // Set current year in copyright
+    const yearSpan = document.querySelector('.footer-bottom p');
+    if (yearSpan && yearSpan.textContent.includes('2024')) {
+        const currentYear = new Date().getFullYear();
+        yearSpan.textContent = yearSpan.textContent.replace('2024', currentYear);
+    }
 });
