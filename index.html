@@ -1,27 +1,254 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Welcome to Russia - TEST</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Russia - Student Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body style="font-family: Arial; padding: 40px; text-align: center;">
-    <h1 style="color: blue;">🚀 WEBSITE IS WORKING!</h1>
-    <p>If you can see this, your GitHub Pages is working.</p>
-    <p>Student Guide for Lobachevsky University</p>
-    
-    <div style="margin-top: 30px;">
-        <button style="background: blue; color: white; padding: 15px 30px; border: none; border-radius: 8px; margin: 10px;">
-            Click Me - I Work!
-        </button>
-        <br>
-        <a href="#test" style="background: green; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; display: inline-block; margin-top: 20px;">
-            This is a Link
-        </a>
-    </div>
-    
-    <script>
-        document.querySelector('button').addEventListener('click', function() {
-            alert('Button clicked! Website is interactive.');
-        });
-    </script>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="flag">🇷🇺</span>
+                <h1>Welcome to Russia</h1>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                <a href="#guide" class="nav-link"><i class="fas fa-book"></i> Guide</a>
+                <a href="#buddy" class="nav-link"><i class="fas fa-hands-helping"></i> Buddy</a>
+                <a href="#map" class="nav-link"><i class="fas fa-map-marked-alt"></i> Map</a>
+                <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+            </nav>
+            <div class="language">
+                <button class="lang-btn active">EN</button>
+                <button class="lang-btn">RU</button>
+                <button class="lang-btn">AR</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Your Smooth Start in Russia Begins Here</h2>
+                <p class="subtitle">A complete guide for international students at Lobachevsky University, Nizhny Novgorod</p>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <h3>2,000+</h3>
+                        <p>Students Helped</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50+</h3>
+                        <p>Volunteer Buddies</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>Support Available</p>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="#guide" class="btn primary-btn">
+                        <i class="fas fa-play-circle"></i> Start First Week Guide
+                    </a>
+                    <a href="#buddy" class="btn secondary-btn">
+                        <i class="fas fa-user-friends"></i> Request a Student Buddy
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <i class="fas fa-university"></i>
+                    <p>Lobachevsky University Campus</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Guide -->
+    <section class="quick-guide" id="guide">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-clipboard-list"></i> First Week Survival Checklist</h2>
+            
+            <div class="checklist">
+                <div class="check-item completed">
+                    <div class="check-icon">✓</div>
+                    <div class="check-content">
+                        <h3>Day 1: Arrival & Check-in</h3>
+                        <p>Airport pickup, dormitory registration, SIM card purchase</p>
+                    </div>
+                </div>
+                
+                <div class="check-item">
+                    <div class="check-icon">2</div>
+                    <div class="check-content">
+                        <h3>Day 2: University Registration</h3>
+                        <p>Submit documents at International Office, get student ID</p>
+                        <button class="detail-btn">View Details <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="check-item">
+                    <div class="check-icon">3</div>
+                    <div class="check-content">
+                        <h3>Day 3: Legal Procedures</h3>
+                        <p>Visa registration (within 7 days), migration card processing</p>
+                        <button class="detail-btn">View Details <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="check-item">
+                    <div class="check-icon">4</div>
+                    <div class="check-content">
+                        <h3>Day 4: Bank & Finances</h3>
+                        <p>Open bank account (Sberbank/VTB), get insurance</p>
+                        <button class="detail-btn">View Details <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="check-item">
+                    <div class="check-icon">5</div>
+                    <div class="check-content">
+                        <h3>Day 5: Explore City</h3>
+                        <p>Public transport, supermarkets, important locations</p>
+                        <button class="detail-btn">View Details <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buddy System -->
+    <section class="buddy-system" id="buddy">
+        <div class="container">
+            <div class="buddy-content">
+                <h2 class="section-title"><i class="fas fa-hands-helping"></i> Get a Student Buddy</h2>
+                <p class="section-desc">Don't navigate alone! Our trained volunteer buddies will:</p>
+                
+                <ul class="benefits">
+                    <li><i class="fas fa-check-circle"></i> Meet you at airport/train station</li>
+                    <li><i class="fas fa-check-circle"></i> Help with university registration</li>
+                    <li><i class="fas fa-check-circle"></i> Show you around the city</li>
+                    <li><i class="fas fa-check-circle"></i> Introduce to other students</li>
+                    <li><i class="fas fa-check-circle"></i> Answer all your questions 24/7</li>
+                </ul>
+                
+                <div class="buddy-form">
+                    <h3>Request a Buddy Now</h3>
+                    <form id="buddyRequestForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Full Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Country" required>
+                            <input type="date" placeholder="Arrival Date" required>
+                        </div>
+                        <select required>
+                            <option value="">Preferred Language</option>
+                            <option>English</option>
+                            <option>Russian</option>
+                            <option>Arabic</option>
+                            <option>French</option>
+                        </select>
+                        <textarea placeholder="Tell us about your specific needs..." rows="3"></textarea>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Submit Buddy Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" id="map">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-map-marked-alt"></i> Important Locations in Nizhny Novgorod</h2>
+            
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="location-icon bank">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Banks</h3>
+                    <p><strong>Sberbank:</strong> Bolshaya Pokrovskaya 15</p>
+                    <p><strong>VTB:</strong> Rozhdestvenskaya 25</p>
+                    <button class="location-btn">Get Directions</button>
+                </div>
+                
+                <div class="location-card">
+                    <div class="location-icon medical">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3>Medical</h3>
+                    <p><strong>City Hospital:</strong> Minina 20</p>
+                    <p><strong>24h Pharmacy:</strong> Gorkogo 45</p>
+                    <button class="location-btn">Get Directions</button>
+                </div>
+                
+                <div class="location-card">
+                    <div class="location-icon supermarket">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Supermarkets</h3>
+                    <p><strong>Magnit:</strong> Universitetskaya 10</p>
+                    <p><strong>Perekrestok:</strong> Lenina 30</p>
+                    <button class="location-btn">Get Directions</button>
+                </div>
+                
+                <div class="location-card">
+                    <div class="location-icon university">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>University</h3>
+                    <p><strong>Main Campus:</strong> Gagarina 23</p>
+                    <p><strong>International Office:</strong> Building 2, Room 101</p>
+                    <button class="location-btn">Get Directions</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-info-circle"></i> About Project</h3>
+                    <p>Non-profit initiative supported by Lobachevsky University to help international students adapt to life in Russia.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-phone-alt"></i> Contact</h3>
+                    <p><i class="fas fa-envelope"></i> help@welcometorussia.org</p>
+                    <p><i class="fas fa-phone"></i> +7 (831) 462-30-45</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nizhny Novgorod, Russia</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 Welcome to Russia Project. All rights reserved.</p>
+                <p>Created with ❤️ for international students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
