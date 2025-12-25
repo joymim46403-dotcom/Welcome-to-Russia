@@ -3,252 +3,915 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Russia - Student Guide</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Welcome to Russia - International Student Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* HEADER */
+        .header {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo h1 {
+            color: #1e3a8a;
+            font-size: 2.2rem;
+        }
+        
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            background: #f1f5f9;
+            padding: 10px;
+            border-radius: 12px;
+        }
+        
+        .lang-btn {
+            padding: 10px 20px;
+            border: none;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        
+        .lang-btn.active {
+            background: #1e3a8a;
+            color: white;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .hero h1 {
+            color: #1e3a8a;
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            color: #64748b;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* BUTTONS */
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .nav-btn {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            border: none;
+            padding: 18px 32px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 220px;
+            justify-content: center;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(30, 58, 138, 0.3);
+        }
+        
+        /* CONTENT SECTIONS */
+        .content-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            color: #1e3a8a;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .info-card {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #3b82f6;
+        }
+        
+        .info-card h4 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .info-card p {
+            margin: 8px 0;
+            color: #475569;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            background: #e0f2fe;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #1e3a8a;
+        }
+        
+        /* FOOTER */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .contact-item {
+            text-align: left;
+        }
+        
+        .contact-item h4 {
+            color: #60a5fa;
+            margin-bottom: 10px;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .nav-btn {
+                width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
+    <div class="container">
+        <!-- HEADER WITH LANGUAGE SWITCHER -->
+        <header class="header">
             <div class="logo">
-                <span class="flag">🇷🇺</span>
-                <h1>Welcome to Russia</h1>
+                <span style="font-size: 2.5rem;">🇷🇺</span>
+                <h1 data-i18n="site_title">Welcome to Russia</h1>
             </div>
-            <nav class="nav">
-                <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
-                <a href="#guide" class="nav-link"><i class="fas fa-book"></i> Guide</a>
-                <a href="#buddy" class="nav-link"><i class="fas fa-hands-helping"></i> Buddy</a>
-                <a href="#map" class="nav-link"><i class="fas fa-map-marked-alt"></i> Map</a>
-                <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
-            </nav>
-            <div class="language">
-                <button class="lang-btn active">EN</button>
-                <button class="lang-btn">RU</button>
-                <button class="lang-btn">AR</button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Your Smooth Start in Russia Begins Here</h2>
-                <p class="subtitle">A complete guide for international students at Lobachevsky University, Nizhny Novgorod</p>
-                
-                <div class="stats">
-                    <div class="stat">
-                        <h3>2,000+</h3>
-                        <p>Students Helped</p>
-                    </div>
-                    <div class="stat">
-                        <h3>50+</h3>
-                        <p>Volunteer Buddies</p>
-                    </div>
-                    <div class="stat">
-                        <h3>24/7</h3>
-                        <p>Support Available</p>
-                    </div>
-                </div>
-                
-                <div class="cta-buttons">
-                    <a href="#guide" class="btn primary-btn">
-                        <i class="fas fa-play-circle"></i> Start First Week Guide
-                    </a>
-                    <a href="#buddy" class="btn secondary-btn">
-                        <i class="fas fa-user-friends"></i> Request a Student Buddy
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="image-placeholder">
-                    <i class="fas fa-university"></i>
-                    <p>Lobachevsky University Campus</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick Guide -->
-    <section class="quick-guide" id="guide">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-clipboard-list"></i> First Week Survival Checklist</h2>
             
-            <div class="checklist">
-                <div class="check-item completed">
-                    <div class="check-icon">✓</div>
-                    <div class="check-content">
-                        <h3>Day 1: Arrival & Check-in</h3>
-                        <p>Airport pickup, dormitory registration, SIM card purchase</p>
-                    </div>
-                </div>
-                
-                <div class="check-item">
-                    <div class="check-icon">2</div>
-                    <div class="check-content">
-                        <h3>Day 2: University Registration</h3>
-                        <p>Submit documents at International Office, get student ID</p>
-                        <button class="detail-btn">View Details <i class="fas fa-arrow-right"></i></button>
-                    </div>
-                </div>
-                
-                <div class="check-item">
-                    <div class="check-icon">3</div>
-                    <div class="check-content">
-                        <h3>Day 3: Legal Procedures</h3>
-                        <p>Visa registration (within 7 days), migration card processing</p>
-                        <button class="detail-btn">View Details <i class="fas fa-arrow-right"></i></button>
-                    </div>
-                </div>
-                
-                <div class="check-item">
-                    <div class="check-icon">4</div>
-                    <div class="check-content">
-                        <h3>Day 4: Bank & Finances</h3>
-                        <p>Open bank account (Sberbank/VTB), get insurance</p>
-                        <button class="detail-btn">View Details <i class="fas fa-arrow-right"></i></button>
-                    </div>
-                </div>
-                
-                <div class="check-item">
-                    <div class="check-icon">5</div>
-                    <div class="check-content">
-                        <h3>Day 5: Explore City</h3>
-                        <p>Public transport, supermarkets, important locations</p>
-                        <button class="detail-btn">View Details <i class="fas fa-arrow-right"></i></button>
-                    </div>
-                </div>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en" onclick="changeLanguage('en')">English</button>
+                <button class="lang-btn" data-lang="ru" onclick="changeLanguage('ru')">Русский</button>
+                <button class="lang-btn" data-lang="ar" onclick="changeLanguage('ar')">العربية</button>
+                <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">Français</button>
             </div>
-        </div>
-    </section>
-
-    <!-- Buddy System -->
-    <section class="buddy-system" id="buddy">
-        <div class="container">
-            <div class="buddy-content">
-                <h2 class="section-title"><i class="fas fa-hands-helping"></i> Get a Student Buddy</h2>
-                <p class="section-desc">Don't navigate alone! Our trained volunteer buddies will:</p>
-                
-                <ul class="benefits">
-                    <li><i class="fas fa-check-circle"></i> Meet you at airport/train station</li>
-                    <li><i class="fas fa-check-circle"></i> Help with university registration</li>
-                    <li><i class="fas fa-check-circle"></i> Show you around the city</li>
-                    <li><i class="fas fa-check-circle"></i> Introduce to other students</li>
-                    <li><i class="fas fa-check-circle"></i> Answer all your questions 24/7</li>
-                </ul>
-                
-                <div class="buddy-form">
-                    <h3>Request a Buddy Now</h3>
-                    <form id="buddyRequestForm">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Full Name" required>
-                            <input type="email" placeholder="Email Address" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Country" required>
-                            <input type="date" placeholder="Arrival Date" required>
-                        </div>
-                        <select required>
-                            <option value="">Preferred Language</option>
-                            <option>English</option>
-                            <option>Russian</option>
-                            <option>Arabic</option>
-                            <option>French</option>
-                        </select>
-                        <textarea placeholder="Tell us about your specific needs..." rows="3"></textarea>
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i> Submit Buddy Request
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section class="map-section" id="map">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-map-marked-alt"></i> Important Locations in Nizhny Novgorod</h2>
+        </header>
+        
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <h1 data-i18n="hero_title">Your Journey in Russia Starts Here</h1>
+            <p data-i18n="hero_subtitle">Official support guide for international students at Lobachevsky State University</p>
             
-            <div class="locations-grid">
-                <div class="location-card">
-                    <div class="location-icon bank">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <h3>Banks</h3>
-                    <p><strong>Sberbank:</strong> Bolshaya Pokrovskaya 15</p>
-                    <p><strong>VTB:</strong> Rozhdestvenskaya 25</p>
-                    <button class="location-btn">Get Directions</button>
-                </div>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="showSection('guide')">
+                    <span>📘</span>
+                    <span data-i18n="btn_guide">First Week Guide</span>
+                </button>
                 
-                <div class="location-card">
-                    <div class="location-icon medical">
-                        <i class="fas fa-hospital"></i>
-                    </div>
-                    <h3>Medical</h3>
-                    <p><strong>City Hospital:</strong> Minina 20</p>
-                    <p><strong>24h Pharmacy:</strong> Gorkogo 45</p>
-                    <button class="location-btn">Get Directions</button>
-                </div>
+                <button class="nav-btn" onclick="showSection('services')">
+                    <span>🏛️</span>
+                    <span data-i18n="btn_services">University Services</span>
+                </button>
                 
-                <div class="location-card">
-                    <div class="location-icon supermarket">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3>Supermarkets</h3>
-                    <p><strong>Magnit:</strong> Universitetskaya 10</p>
-                    <p><strong>Perekrestok:</strong> Lenina 30</p>
-                    <button class="location-btn">Get Directions</button>
-                </div>
+                <button class="nav-btn" onclick="showSection('map')">
+                    <span>🗺️</span>
+                    <span data-i18n="btn_map">City Map & Locations</span>
+                </button>
                 
-                <div class="location-card">
-                    <div class="location-icon university">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>University</h3>
-                    <p><strong>Main Campus:</strong> Gagarina 23</p>
-                    <p><strong>International Office:</strong> Building 2, Room 101</p>
-                    <button class="location-btn">Get Directions</button>
-                </div>
+                <button class="nav-btn" onclick="showSection('contacts')">
+                    <span>📞</span>
+                    <span data-i18n="btn_contacts">Emergency Contacts</span>
+                </button>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3><i class="fas fa-info-circle"></i> About Project</h3>
-                    <p>Non-profit initiative supported by Lobachevsky University to help international students adapt to life in Russia.</p>
+        </section>
+        
+        <!-- GUIDE SECTION -->
+        <section id="guide" class="content-section">
+            <h2 class="section-title">
+                <span>📋</span>
+                <span data-i18n="section_guide">First 7 Days: Complete Guide</span>
+            </h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4 data-i18n="day1_title">📍 Day 1: Arrival & Check-in</h4>
+                    <p data-i18n="day1_point1">• Airport pickup service (book in advance)</p>
+                    <p data-i18n="day1_point2">• Dormitory registration at your assigned building</p>
+                    <p data-i18n="day1_point3">• Get Russian SIM card: MTS/Megafon/Beeline</p>
+                    <p data-i18n="day1_point4">• Emergency food and essentials purchase</p>
                 </div>
                 
-                <div class="footer-section">
-                    <h3><i class="fas fa-phone-alt"></i> Contact</h3>
-                    <p><i class="fas fa-envelope"></i> help@welcometorussia.org</p>
-                    <p><i class="fas fa-phone"></i> +7 (831) 462-30-45</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Nizhny Novgorod, Russia</p>
+                <div class="info-card">
+                    <h4 data-i18n="day2_title">🏛️ Day 2: University Registration</h4>
+                    <p data-i18n="day2_point1">• Location: International Office, Gagarina 23, Building 2, Office 306</p>
+                    <p data-i18n="day2_point2">• Working hours: 9:00 AM - 6:00 PM (Monday-Friday)</p>
+                    <p data-i18n="day2_point3">• Required: Passport, visa, educational certificates, 8 photos (3×4 cm)</p>
+                    <p data-i18n="day2_point4">• Get your student ID and university documents</p>
                 </div>
                 
-                <div class="footer-section">
-                    <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-                    </div>
+                <div class="info-card">
+                    <h4 data-i18n="day3_title">📝 Day 3: Visa Registration (URGENT)</h4>
+                    <p data-i18n="day3_point1">• MUST complete within 7 working days of arrival</p>
+                    <p data-i18n="day3_point2">• Location: Migration Department, Gagarina Avenue 97</p>
+                    <p data-i18n="day3_point3">• Fee: 1,600 RUB (bring exact cash)</p>
+                    <p data-i18n="day3_point4">• Required: Passport, migration card, university notification</p>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>© 2024 Welcome to Russia Project. All rights reserved.</p>
-                <p>Created with ❤️ for international students</p>
+            <div class="highlight">
+                <p data-i18n="tip_registration">⚠️ IMPORTANT: Visa registration is mandatory by Russian law. Failure to register can result in fines up to 5,000 RUB.</p>
             </div>
-        </div>
-    </footer>
+        </section>
+        
+        <!-- SERVICES SECTION -->
+        <section id="services" class="content-section" style="display: none;">
+            <h2 class="section-title">
+                <span>🏛️</span>
+                <span data-i18n="section_services">University Services & Facilities</span>
+            </h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4 data-i18n="service_international">🌍 International Office</h4>
+                    <p><strong data-i18n="address">Address:</strong> Gagarina Avenue 23, Building 2, Office 306</p>
+                    <p><strong data-i18n="phone">Phone:</strong> +7 (831) 462-3015</p>
+                    <p><strong data-i18n="email">Email:</strong> international@lobachevsky.ru</p>
+                    <p><strong data-i18n="hours">Working Hours:</strong> 9:00-18:00 (Mon-Fri)</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4 data-i18n="service_library">📚 University Library</h4>
+                    <p><strong data-i18n="address">Address:</strong> Gagarina Avenue 23, Building 1, 2nd Floor</p>
+                    <p><strong data-i18n="hours">Hours:</strong> 8:00-22:00 (Mon-Sat), 10:00-18:00 (Sun)</p>
+                    <p data-i18n="library_note">• Free Wi-Fi throughout</p>
+                    <p data-i18n="library_note2">• English section available</p>
+                    <p data-i18n="library_note3">• Printing/scanning services</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4 data-i18n="service_medical">🏥 Medical Center</h4>
+                    <p><strong data-i18n="address">Address:</strong> Gagarina Avenue 23, Building 3</p>
+                    <p><strong data-i18n="phone">Phone:</strong> +7 (831) 462-3050</p>
+                    <p data-i18n="medical_note">• Free for enrolled students</p>
+                    <p data-i18n="medical_note2">• International vaccination service</p>
+                    <p data-i18n="medical_note3">• English-speaking doctor available</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4 data-i18n="service_sports">⚽ Sports Complex</h4>
+                    <p><strong data-i18n="address">Address:</strong> Gagarina Avenue 25, Building 5</p>
+                    <p data-i18n="sports_note">• Free access for students</p>
+                    <p data-i18n="sports_note2">• Gym, swimming pool, football field</p>
+                    <p data-i18n="sports_note3">• Sport equipment rental available</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- MAP & LOCATIONS SECTION -->
+        <section id="map" class="content-section" style="display: none;">
+            <h2 class="section-title">
+                <span>🗺️</span>
+                <span data-i18n="section_map">Essential Locations in Nizhny Novgorod</span>
+            </h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4 data-i18n="bank_title">🏦 Banks (English Service Available)</h4>
+                    <p><strong>Sberbank:</strong> Gagarina Avenue 23, Building 1</p>
+                    <p><strong>VTB Bank:</strong> Gagarina Avenue 27</p>
+                    <p><strong>Alfa-Bank:</strong> Bolshaya Pokrovskaya 82</p>
+                    <p><strong>Working Hours:</strong> 10:00-19:00 (Mon-Fri), 10:00-16:00 (Sat)</p>
+                    <p data-i18n="bank_note">• Student accounts with no monthly fee</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4 data-i18n="supermarket_title">🛒 Supermarkets & Shopping</h4>
+                    <p><strong>Balsoya Supermarket:</strong> Bolshaya Pokrovskaya 82</p>
+                    <p><strong>Perekrestok:</strong> Lenina Street 30</p>
+                    <p><strong>Magnit:</strong> Universitetskaya Street 10 (24 hours)</p>
+                    <p><strong>Auchan:</strong> Yarmarochny Proezd 1</p>
+                    <p data-i18n="market_note">• Halal section available at Balsoya</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4 data-i18n="medical_title">🏥 Medical Services</h4>
+                    <p><strong>City Hospital No. 5:</strong> Nizhne-Volzhskaya Embankment 2</p>
+                    <p><strong>24h Pharmacy "Neopharm":</strong> Gagarina Avenue 98</p>
+                    <p><strong>International Clinic:</strong> Belinskogo Street 71</p>
+                    <p><strong>Emergency:</strong> 103 (Ambulance)</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4 data-i18n="transport_title">🚇 Public Transport</h4>
+                    <p><strong>Metro Stations:</strong> Gagarinskaya, Park Kultury</p>
+                    <p><strong>Bus/Trolleybus:</strong> Route 43 to University</p>
+                    <p><strong>Transport Card:</strong> "EasyCard" available at metro stations</p>
+                    <p data-i18n="transport_note">• Student discount: 50% on monthly pass</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CONTACTS SECTION -->
+        <section id="contacts" class="content-section" style="display: none;">
+            <h2 class="section-title">
+                <span>📞</span>
+                <span data-i18n="section_contacts">Emergency & Important Contacts</span>
+            </h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4 data-i18n="emergency_title">🚨 Emergency Services</h4>
+                    <p><strong>Police:</strong> 102</p>
+                    <p><strong>Ambulance:</strong> 103</p>
+                    <p><strong>Fire Department:</strong> 101</p>
+                    <p><strong>General Emergency:</strong> 112</p>
+                    <p><strong>Tourist Police:</strong> +7 (831) 439-0765</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4 data-i18n="uni_contacts">🏫 University Contacts</h4>
+                    <p><strong>International Office:</strong> +7 (831) 462-3015</p>
+                    <p><strong>Dean's Office:</strong> +7 (831) 462-3001</p>
+                    <p><strong>Student Union:</strong> +7 (831) 462-3088</p>
+                    <p><strong>24/7 Security:</strong> +7 (831) 462-3099</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4 data-i18n="embassy_title">🌍 Embassy Contacts (Moscow)</h4>
+                    <p><strong>India:</strong> +7 (495) 783-7535</p>
+                    <p><strong>China:</strong> +7 (495) 783-0867</p>
+                    <p><strong>Egypt:</strong> +7 (499) 246-3096</p>
+                    <p><strong>Nigeria:</strong> +7 (495) 945-2293</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4 data-i18n="support_title">🤝 Student Support</h4>
+                    <p><strong>Buddy Program:</strong> buddy@lobachevsky.ru</p>
+                    <p><strong>WhatsApp Group:</strong> +7 (999) 123-4567</p>
+                    <p><strong>Telegram Channel:</strong> @lobachevsky_help</p>
+                    <p><strong>Website:</strong> lobachevsky.ru/en</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FOOTER -->
+        <footer class="footer">
+            <h3 data-i18n="footer_title">Welcome to Russia Project</h3>
+            <p data-i18n="footer_subtitle">Supported by Lobachevsky State University, Nizhny Novgorod</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4 data-i18n="footer_contact">Contact</h4>
+                    <p>📧 international@lobachevsky.ru</p>
+                    <p>📞 +7 (831) 462-3045</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4 data-i18n="footer_address">Address</h4>
+                    <p>🏛️ Gagarina Avenue 23</p>
+                    <p>📍 Nizhny Novgorod, Russia</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4 data-i18n="footer_hours">Working Hours</h4>
+                    <p>⏰ 9:00 - 18:00 (Mon-Fri)</p>
+                    <p>📅 10:00 - 16:00 (Saturday)</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 30px; color: #cbd5e1; font-size: 0.9rem;">
+                © 2024 Welcome to Russia | <span data-i18n="footer_rights">All rights reserved</span>
+            </p>
+        </footer>
+    </div>
 
-    <script src="script.js"></script>
+    <script>
+        // ========== LANGUAGE TRANSLATION SYSTEM ==========
+        const translations = {
+            en: {
+                // Header & Navigation
+                "site_title": "Welcome to Russia",
+                "hero_title": "Your Journey in Russia Starts Here",
+                "hero_subtitle": "Official support guide for international students at Lobachevsky State University",
+                
+                // Buttons
+                "btn_guide": "First Week Guide",
+                "btn_services": "University Services",
+                "btn_map": "City Map & Locations",
+                "btn_contacts": "Emergency Contacts",
+                
+                // Sections
+                "section_guide": "First 7 Days: Complete Guide",
+                "section_services": "University Services & Facilities",
+                "section_map": "Essential Locations in Nizhny Novgorod",
+                "section_contacts": "Emergency & Important Contacts",
+                
+                // Guide Section
+                "day1_title": "📍 Day 1: Arrival & Check-in",
+                "day1_point1": "• Airport pickup service (book in advance)",
+                "day1_point2": "• Dormitory registration at your assigned building",
+                "day1_point3": "• Get Russian SIM card: MTS/Megafon/Beeline",
+                "day1_point4": "• Emergency food and essentials purchase",
+                
+                "day2_title": "🏛️ Day 2: University Registration",
+                "day2_point1": "• Location: International Office, Gagarina 23, Building 2, Office 306",
+                "day2_point2": "• Working hours: 9:00 AM - 6:00 PM (Monday-Friday)",
+                "day2_point3": "• Required: Passport, visa, educational certificates, 8 photos (3×4 cm)",
+                "day2_point4": "• Get your student ID and university documents",
+                
+                "day3_title": "📝 Day 3: Visa Registration (URGENT)",
+                "day3_point1": "• MUST complete within 7 working days of arrival",
+                "day3_point2": "• Location: Migration Department, Gagarina Avenue 97",
+                "day3_point3": "• Fee: 1,600 RUB (bring exact cash)",
+                "day3_point4": "• Required: Passport, migration card, university notification",
+                
+                "tip_registration": "⚠️ IMPORTANT: Visa registration is mandatory by Russian law. Failure to register can result in fines up to 5,000 RUB.",
+                
+                // Services Section
+                "service_international": "🌍 International Office",
+                "service_library": "📚 University Library",
+                "service_medical": "🏥 Medical Center",
+                "service_sports": "⚽ Sports Complex",
+                
+                "address": "Address:",
+                "phone": "Phone:",
+                "email": "Email:",
+                "hours": "Working Hours:",
+                
+                "library_note": "• Free Wi-Fi throughout",
+                "library_note2": "• English section available",
+                "library_note3": "• Printing/scanning services",
+                
+                "medical_note": "• Free for enrolled students",
+                "medical_note2": "• International vaccination service",
+                "medical_note3": "• English-speaking doctor available",
+                
+                "sports_note": "• Free access for students",
+                "sports_note2": "• Gym, swimming pool, football field",
+                "sports_note3": "• Sport equipment rental available",
+                
+                // Map Section
+                "bank_title": "🏦 Banks (English Service Available)",
+                "supermarket_title": "🛒 Supermarkets & Shopping",
+                "medical_title": "🏥 Medical Services",
+                "transport_title": "🚇 Public Transport",
+                
+                "bank_note": "• Student accounts with no monthly fee",
+                "market_note": "• Halal section available at Balsoya",
+                "transport_note": "• Student discount: 50% on monthly pass",
+                
+                // Contacts Section
+                "emergency_title": "🚨 Emergency Services",
+                "uni_contacts": "🏫 University Contacts",
+                "embassy_title": "🌍 Embassy Contacts (Moscow)",
+                "support_title": "🤝 Student Support",
+                
+                // Footer
+                "footer_title": "Welcome to Russia Project",
+                "footer_subtitle": "Supported by Lobachevsky State University, Nizhny Novgorod",
+                "footer_contact": "Contact",
+                "footer_address": "Address",
+                "footer_hours": "Working Hours",
+                "footer_rights": "All rights reserved"
+            },
+            
+            ru: {
+                // Header & Navigation
+                "site_title": "Добро пожаловать в Россию",
+                "hero_title": "Ваше путешествие в России начинается здесь",
+                "hero_subtitle": "Официальное руководство для иностранных студентов ННГУ им. Лобачевского",
+                
+                // Buttons
+                "btn_guide": "Гид по первой неделе",
+                "btn_services": "Услуги университета",
+                "btn_map": "Карта города и адреса",
+                "btn_contacts": "Экстренные контакты",
+                
+                // Sections
+                "section_guide": "Первые 7 дней: Полное руководство",
+                "section_services": "Услуги и объекты университета",
+                "section_map": "Важные места в Нижнем Новгороде",
+                "section_contacts": "Экстренные и важные контакты",
+                
+                // Guide Section
+                "day1_title": "📍 День 1: Прибытие и заселение",
+                "day1_point1": "• Встреча в аэропорту (забронировать заранее)",
+                "day1_point2": "• Регистрация в общежитии",
+                "day1_point3": "• Получить российскую SIM-карту: МТС/Мегафон/Билайн",
+                "day1_point4": "• Покупка еды и предметов первой необходимости",
+                
+                "day2_title": "🏛️ День 2: Регистрация в университете",
+                "day2_point1": "• Адрес: Международный отдел, ул. Гагарина 23, корпус 2, офис 306",
+                "day2_point2": "• Часы работы: 9:00 - 18:00 (понедельник-пятница)",
+                "day2_point3": "• Необходимо: Паспорт, виза, документы об образовании, 8 фото (3×4 см)",
+                "day2_point4": "• Получить студенческий билет и документы",
+                
+                "day3_title": "📝 День 3: Регистрация визы (СРОЧНО)",
+                "day3_point1": "• ОБЯЗАТЕЛЬНО в течение 7 рабочих дней",
+                "day3_point2": "• Адрес: Отдел миграции, пр. Гагарина 97",
+                "day3_point3": "• Стоимость: 1600 рублей (точная сумма наличными)",
+                "day3_point4": "• Необходимо: Паспорт, миграционная карта, уведомление от университета",
+                
+                "tip_registration": "⚠️ ВАЖНО: Регистрация визы обязательна по российскому законодательству. Штраф за нарушение - до 5000 рублей.",
+                
+                // Services Section
+                "service_international": "🌍 Международный отдел",
+                "service_library": "📚 Университетская библиотека",
+                "service_medical": "🏥 Медицинский центр",
+                "service_sports": "⚽ Спортивный комплекс",
+                
+                "address": "Адрес:",
+                "phone": "Телефон:",
+                "email": "Email:",
+                "hours": "Часы работы:",
+                
+                "library_note": "• Бесплатный Wi-Fi",
+                "library_note2": "• Английский раздел доступен",
+                "library_note3": "• Услуги печати и сканирования",
+                
+                "medical_note": "• Бесплатно для студентов",
+                "medical_note2": "• Международная вакцинация",
+                "medical_note3": "• Врач, говорящий по-английски",
+                
+                "sports_note": "• Бесплатный доступ для студентов",
+                "sports_note2": "• Тренажерный зал, бассейн, футбольное поле",
+                "sports_note3": "• Прокат спортивного инвентаря",
+                
+                // Map Section
+                "bank_title": "🏦 Банки (есть английский сервис)",
+                "supermarket_title": "🛒 Супермаркеты и магазины",
+                "medical_title": "🏥 Медицинские услуги",
+                "transport_title": "🚇 Общественный транспорт",
+                
+                "bank_note": "• Студенческие счета без ежемесячной платы",
+                "market_note": "• Халал секция в Балсое",
+                "transport_note": "• Студенческая скидка 50% на проездной",
+                
+                // Contacts Section
+                "emergency_title": "🚨 Экстренные службы",
+                "uni_contacts": "🏫 Контакты университета",
+                "embassy_title": "🌍 Контакты посольств (Москва)",
+                "support_title": "🤝 Поддержка студентов",
+                
+                // Footer
+                "footer_title": "Проект «Добро пожаловать в Россию»",
+                "footer_subtitle": "При поддержке ННГУ им. Лобачевского, Нижний Новгород",
+                "footer_contact": "Контакты",
+                "footer_address": "Адрес",
+                "footer_hours": "Часы работы",
+                "footer_rights": "Все права защищены"
+            },
+            
+            ar: {
+                // Header & Navigation
+                "site_title": "مرحباً بكم في روسيا",
+                "hero_title": "رحلتك في روسيا تبدأ من هنا",
+                "hero_subtitle": "الدليل الرسمي للطلاب الدوليين في جامعة لوباتشيفسكي الحكومية",
+                
+                // Buttons
+                "btn_guide": "دليل الأسبوع الأول",
+                "btn_services": "خدمات الجامعة",
+                "btn_map": "خريطة المدينة والمواقع",
+                "btn_contacts": "جهات الاتصال الطارئة",
+                
+                // Sections
+                "section_guide": "الأيام السبعة الأولى: دليل كامل",
+                "section_services": "خدمات ومرافق الجامعة",
+                "section_map": "أهم المواقع في نيجني نوفغورود",
+                "section_contacts": "جهات اتصال طارئة ومهمة",
+                
+                // Guide Section
+                "day1_title": "📍 اليوم الأول: الوصول والتسجيل",
+                "day1_point1": "• خدمة الاستقبال في المطار (احجز مسبقاً)",
+                "day1_point2": "• تسجيل السكن في المبنى المخصص",
+                "day1_point3": "• الحصول على شريحة SIM روسية: MTS/Megafon/Beeline",
+                "day1_point4": "• شراء الطعام والضروريات الطارئة",
+                
+                "day2_title": "🏛️ اليوم الثاني: التسجيل في الجامعة",
+                "day2_point1": "• الموقع: المكتب الدولي، جاجارينا 23، المبنى 2، المكتب 306",
+                "day2_point2": "• ساعات العمل: 9:00 صباحاً - 6:00 مساءً (الإثنين-الجمعة)",
+                "day2_point3": "• المطلوب: جواز السفر، التأشيرة، الشهادات التعليمية، 8 صور (3×4 سم)",
+                "day2_point4": "• الحصول على هوية الطالب ومستندات الجامعة",
+                
+                "day3_title": "📝 اليوم الثالث: تسجيل التأشيرة (عاجل)",
+                "day3_point1": "• يجب إكماله خلال 7 أيام عمل من الوصول",
+                "day3_point2": "• الموقع: إدارة الهجرة، جاجارينا 97",
+                "day3_point3": "• الرسوم: 1600 روبل (احضر المبلغ نقداً)",
+                "day3_point4": "• المطلوب: جواز السفر، بطاقة الهجرة، إخطار من الجامعة",
+                
+                "tip_registration": "⚠️ مهم: تسجيل التأشيرة إلزامي بموجب القانون الروسي. عدم التسجيل قد يؤدي إلى غرامة تصل إلى 5000 روبل.",
+                
+                // Services Section
+                "service_international": "🌍 المكتب الدولي",
+                "service_library": "📚 مكتبة الجامعة",
+                "service_medical": "🏥 المركز الطبي",
+                "service_sports": "⚽ المجمع الرياضي",
+                
+                "address": "العنوان:",
+                "phone": "الهاتف:",
+                "email": "البريد الإلكتروني:",
+                "hours": "ساعات العمل:",
+                
+                "library_note": "• واي فاي مجاني في جميع الأماكن",
+                "library_note2": "• قسم باللغة الإنجليزية متوفر",
+                "library_note3": "• خدمات الطباعة والمسح الضوئي",
+                
+                "medical_note": "• مجاني للطلاب المسجلين",
+                "medical_note2": "• خدمة التطعيم الدولية",
+                "medical_note3": "• طبيب يتحدث الإنجليزية متوفر",
+                
+                "sports_note": "• دخول مجاني للطلاب",
+                "sports_note2": "• صالة ألعاب رياضية، مسبح، ملعب كرة قدم",
+                "sports_note3": "• تأجير المعدات الرياضية متاح",
+                
+                // Map Section
+                "bank_title": "🏦 البنوك (خدمة إنجليزية متاحة)",
+                "supermarket_title": "🛒 السوبرماركت والتسوق",
+                "medical_title": "🏥 الخدمات الطبية",
+                "transport_title": "🚇 النقل العام",
+                
+                "bank_note": "• حسابات طلابية بدون رسوم شهرية",
+                "market_note": "• قسم الحلال متوفر في بالسويا",
+                "transport_note": "• خصم طلابي 50٪ على اشتراك شهري",
+                
+                // Contacts Section
+                "emergency_title": "🚨 خدمات الطوارئ",
+                "uni_contacts": "🏫 جهات اتصال الجامعة",
+                "embassy_title": "🌍 جهات اتصال السفارات (موسكو)",
+                "support_title": "🤝 دعم الطلاب",
+                
+                // Footer
+                "footer_title": "مشروع «مرحباً بكم في روسيا»",
+                "footer_subtitle": "بدعم من جامعة لوباتشيفسكي الحكومية، نيجني نوفغورود",
+                "footer_contact": "الاتصال",
+                "footer_address": "العنوان",
+                "footer_hours": "ساعات العمل",
+                "footer_rights": "جميع الحقوق محفوظة"
+            },
+            
+            fr: {
+                // Header & Navigation
+                "site_title": "Bienvenue en Russie",
+                "hero_title": "Votre voyage en Russie commence ici",
+                "hero_subtitle": "Guide officiel pour les étudiants internationaux de l'Université d'État Lobachevsky",
+                
+                // Buttons
+                "btn_guide": "Guide de la première semaine",
+                "btn_services": "Services universitaires",
+                "btn_map": "Carte et lieux de la ville",
+                "btn_contacts": "Contacts d'urgence",
+                
+                // Sections
+                "section_guide": "7 premiers jours : Guide complet",
+                "section_services": "Services et installations de l'université",
+                "section_map": "Lieux essentiels à Nijni Novgorod",
+                "section_contacts": "Contacts d'urgence et importants",
+                
+                // Guide Section
+                "day1_title": "📍 Jour 1 : Arrivée et enregistrement",
+                "day1_point1": "• Service de prise en charge à l'aéroport (réservez à l'avance)",
+                "day1_point2": "• Enregistrement au dortoir assigné",
+                "day1_point3": "• Obtenir une carte SIM russe : MTS/Megafon/Beeline",
+                "day1_point4": "• Achat de nourriture et de produits essentiels d'urgence",
+                
+                "day2_title": "🏛️ Jour 2 : Inscription à l'université",
+                "day2_point1": "• Lieu : Bureau international, Gagarina 23, Bâtiment 2, Bureau 306",
+                "day2_point2": "• Heures d'ouverture : 9h00 - 18h00 (lundi-vendredi)",
+                "day2_point3": "• Requis : Passeport, visa, certificats d'éducation, 8 photos (3×4 cm)",
+                "day2_point4": "• Obtenez votre carte d'étudiant et documents universitaires",
+                
+                "day3_title": "📝 Jour 3 : Enregistrement du visa (URGENT)",
+                "day3_point1": "• DOIT être complété dans les 7 jours ouvrables après l'arrivée",
+                "day3_point2": "• Lieu : Département des migrations, Avenue Gagarina 97",
+                "day3_point3": "• Frais : 1 600 RUB (apportez l'argent exact)",
+                "day3_point4": "• Requis : Passeport, carte de migration, notification de l'université",
+                
+                "tip_registration": "⚠️ IMPORTANT : L'enregistrement du visa est obligatoire selon la loi russe. Le non-respect peut entraîner une amende allant jusqu'à 5 000 RUB.",
+                
+                // Services Section
+                "service_international": "🌍 Bureau international",
+                "service_library": "📚 Bibliothèque universitaire",
+                "service_medical": "🏥 Centre médical",
+                "service_sports": "⚽ Complexe sportif",
+                
+                "address": "Adresse :",
+                "phone": "Téléphone :",
+                "email": "Email :",
+                "hours": "Heures d'ouverture :",
+                
+                "library_note": "• Wi-Fi gratuit partout",
+                "library_note2": "• Section anglaise disponible",
+                "library_note3": "• Services d'impression/numérisation",
+                
+                "medical_note": "• Gratuit pour les étudiants inscrits",
+                "medical_note2": "• Service de vaccination international",
+                "medical_note3": "• Médecin anglophone disponible",
+                
+                "sports_note": "• Accès gratuit pour les étudiants",
+                "sports_note2": "• Salle de sport, piscine, terrain de football",
+                "sports_note3": "• Location d'équipement sportif disponible",
+                
+                // Map Section
+                "bank_title": "🏦 Banques (service en anglais disponible)",
+                "supermarket_title": "🛒 Supermarchés et shopping",
+                "medical_title": "🏥 Services médicaux",
+                "transport_title": "🚇 Transport public",
+                
+                "bank_note": "• Comptes étudiants sans frais mensuels",
+                "market_note": "• Section halal disponible à Balsoya",
+                "transport_note": "• Réduction étudiante : 50% sur l'abonnement mensuel",
+                
+                // Contacts Section
+                "emergency_title": "🚨 Services d'urgence",
+                "uni_contacts": "🏫 Contacts universitaires",
+                "embassy_title": "🌍 Contacts des ambassades (Moscou)",
+                "support_title": "🤝 Soutien aux étudiants",
+                
+                // Footer
+                "footer_title": "Projet « Bienvenue en Russie »",
+                "footer_subtitle": "Soutenu par l'Université d'État Lobachevsky, Nijni Novgorod",
+                "footer_contact": "Contact",
+                "footer_address": "Adresse",
+                "footer_hours": "Heures d'ouverture",
+                "footer_rights": "Tous droits réservés"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Show message
+            const langNames = {
+                'en': 'English',
+                'ru': 'Russian',
+                'ar': 'Arabic',
+                'fr': 'French'
+            };
+            alert(`Language changed to ${langNames[lang]}`);
+        }
+
+        // ========== SECTION NAVIGATION ==========
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show selected section
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.style.display = 'block';
+                
+                // Smooth scroll to section
+                window.scrollTo({
+                    top: section.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Update active button visual
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.style.background = 'linear-gradient(135deg, #1e3a8a, #3b82f6)';
+            });
+            
+            event.target.style.background = 'linear-gradient(135deg, #0d3b9c, #2563eb)';
+        }
+
+        // ========== INITIALIZE WEBSITE ==========
+        window.onload = function() {
+            console.log('🚀 Welcome to Russia website loaded!');
+            
+            // Show guide section by default
+            showSection('guide');
+            
+            // Load saved language preference
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+            
+            // Make all buttons interactive
+            document.querySelectorAll('.nav-btn, .lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+            
+            // Add click effect to info cards
+            document.querySelectorAll('.info-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+            });
+        };
+    </script>
 </body>
 </html>
